@@ -1,0 +1,247 @@
+:root {
+  --tomato-color: hsl(4, 100%, 67%);
+  --cor-primaria: hsl(234, 29%, 20%);
+  --cor-secundaria: hsl(235, 18%, 26%);
+  --cor-terciaria: hsl(231, 7%, 60%);
+  --cor-branca: hsl(0, 0%, 100%);
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: var(--cor-primaria);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  width: 50%;
+  height: 60%;
+  background-color: var(--cor-branca);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardContainer .textContainer {
+  width: 50%;
+  padding: 4rem 1rem 4rem 4rem;
+}
+
+.cardContainer .textContainer h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+}
+
+.cardContainer .textContainer p,
+.cardContainer .textContainer li {
+  color: var(--cor-primaria);
+}
+
+.cardContainer .textContainer .descText {
+  line-height: 1.5rem;
+  width: 95%;
+  margin-bottom: 1.1rem;
+}
+
+.cardContainer .textContainer ul{
+  margin-bottom: 3rem;
+}
+.cardContainer .textContainer li {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0;
+}
+
+.cardContainer .textContainer li svg{
+  margin-right: 0.8rem;
+}
+
+.cardContainer .textContainer .emailContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContainer .textContainer .emailContainer .msgEmailContainer{
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardContainer .textContainer .emailContainer input{
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--cor-terciaria);
+  padding: 1rem;
+  margin-bottom:  1rem;
+}
+
+.cardContainer .textContainer .emailContainer input::placeholder, textarea::placeholder{
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.cardContainer .textContainer .emailContainer .msgEmailContainer .errorMsg{
+  color: var(--tomato-color);
+  display: none;
+}
+
+.cardContainer .textContainer .emailContainer button{
+  background-color: var(--cor-primaria);
+  height: 3rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--cor-branca);
+  font-weight: bold;
+}
+
+.cardContainer .textContainer .emailContainer input:hover{
+  cursor: pointer;
+  border: 1px solid ;
+}
+
+.cardContainer .textContainer .emailContainer input:focus::placeholder{
+  opacity: 0;
+}
+
+.cardContainer .textContainer .emailContainer button:hover, .successMsgContainer .dismisMsg:hover{
+  cursor: pointer;
+  background-image: linear-gradient(45deg, var(--tomato-color), orange);
+}
+
+.cardContainer .imgContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.successMsgContainer{
+  width: 400px;
+  height: 420px;
+  background-color: var(--cor-branca);
+  border-radius: 2rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  position: relative;
+}
+
+.successMsgContainer svg{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.successMsgContainer .mainSuccessMsg{
+  color: var(--cor-primaria);
+  font-weight: bold;
+  margin-top: 4rem;
+  font-size: 2.8rem;
+  line-height: 2.5rem;
+}
+
+.successMsgContainer .descSuccessMsg{
+  margin: 2rem 0 2rem;
+  color: var(--cor-primaria);
+ font-size: 0.8rem;
+ line-height: 1.3rem;
+}
+
+.successMsgContainer .dismisMsg{
+  background-color: var(--cor-primaria);
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--cor-branca);
+  font-weight: bold;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 375px){
+
+  .cardContainer{
+    height: 100vh;
+    width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .cardContainer .imgContainer{
+    width: 100%;
+    height: 275px;
+    background-image:url(assets/images/illustration-sign-up-mobile.svg);
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  .cardContainer .imgContainer img{
+   display: none;
+  }
+
+  .cardContainer .textContainer{
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 8rem;
+  
+  }
+  .cardContainer .textContainer li, .cardContainer .textContainer .descText{
+    padding-right: 3.5rem;
+    line-height: 1.2rem;
+    align-items: center;
+  }
+
+  .cardContainer .textContainer .titleText{
+    font-size: 2.5rem;
+    
+  }
+
+  .successMsgContainer{
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    justify-content: center;
+  }
+
+  .successMsgContainer svg{
+    top: 16rem
+  }
+
+  .successMsgContainer .dismisMsg{
+    position: absolute;
+    bottom: 2rem;
+    width: 80%;
+  }
+}
